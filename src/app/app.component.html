@@ -1,0 +1,24 @@
+<ng2-slim-loading-bar color="blue"></ng2-slim-loading-bar>
+
+<nav class="navbar navbar-expand-sm bg-light">
+  <div class="container-fluid">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a routerLink="contacts/create" class="nav-link" routerLinkActive="active">
+          Create Contact
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="contacts" class="nav-link" routerLinkActive="active">
+          View Contacts
+        </a>
+      </li> 
+    </ul>
+  </div>
+</nav>
+<div class="container">
+  <br />
+  <h1 align="center">Simple Example App</h1>
+  <br />
+  <router-outlet></router-outlet>
+</div>

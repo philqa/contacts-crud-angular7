@@ -1,0 +1,46 @@
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="form" novalidate id="contacts-form">
+      <div class="alert alert-success" *ngIf="message">{{message}}</div>
+      <div class="form-group">
+        <label class="col-md-4">Name</label>
+        <input id="name-input" type="text" class="form-control" formControlName="name" #name/>
+      </div>
+      <div
+        *ngIf="form.controls['name'].invalid && (form.controls['name'].dirty || form.controls['name'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="form.controls['name'].errors.required">
+          Name is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Email</label>
+        <input id="email-input" type="text" class="form-control" formControlName="email" #email/>
+      </div>
+      <div
+        *ngIf="form.controls['email'].invalid && (form.controls['email'].dirty || form.controls['email'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="form.controls['email'].errors.required">
+          Email is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Phone Number</label>
+        <input id="phone-input" type="text" class="form-control" formControlName="phone_number" #phone_number/>
+      </div>
+      <div
+        *ngIf="form.controls['phone_number'].invalid && (form.controls['phone_number'].dirty || form.controls['phone_number'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="form.controls['phone_number'].errors.required">
+          Phone Number is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <button id="submit" (click)="addContacts(name.value, email.value, phone_number.value)"
+                [disabled]="form.pristine || form.invalid"
+                class="btn btn-primary">Add Contact
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

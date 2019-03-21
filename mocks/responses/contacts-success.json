@@ -1,0 +1,30 @@
+[
+  {
+    "_id": "5c90d3234be83634b4108371",
+    "name": "James",
+    "email": "james@email.com",
+    "phone_number": "88887777",
+    "__v": 0
+  },
+  {
+    "_id": "5c91de1945428c47d8e4af8d",
+    "name": "Tom",
+    "email": "tom@email.com",
+    "phone_number": "0711223344",
+    "__v":0
+  },
+  {
+    "_id": "5c9226632478cb2f1cc7cc07",
+    "name": "Jane",
+    "email": "jane@email.com",
+    "phone_number": "0499996666",
+    "__v":0
+  },
+  {
+    "_id": "5c9226752478cb2f1cc7cc08",
+    "name": "Sarah",
+    "email": "sarah@email.com",
+    "phone_number": "0412341234",
+    "__v":0
+  }
+]

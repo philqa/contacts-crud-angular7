@@ -1,0 +1,19 @@
+{
+  "expression": "contacts",
+  "method": "OPTIONS",
+  "name": "options",
+  "isArray": false,
+  "responses": {
+    "success": {
+      "default": true,
+      "status": 204,
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "content-type",
+        "Access-Control-Allow-Methods": "GET,HEAD,PUT,PATCH,POST,DELETE"
+      },
+      "data": "",
+      "delay": 100
+    }
+  }
+}

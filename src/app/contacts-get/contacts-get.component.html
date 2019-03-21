@@ -1,0 +1,21 @@
+<div class="alert alert-success" *ngIf="message">{{message}}</div>
+<table class="table table-hover">
+  <thead>
+  <tr>
+      <td>Name</td>
+      <td>Email</td>
+      <td>Phone Number</td>
+      <td colspan="2">Actions</td>
+  </tr>
+  </thead>
+
+  <tbody>
+      <tr *ngFor="let contact of contacts" id="contacts-table">
+          <td>{{ contact.name }}</td>
+          <td>{{ contact.email }}</td>
+          <td>{{ contact.phone_number }}</td>
+          <td><a [routerLink]="['edit', contact._id]" class="btn btn-primary">Edit</a></td>
+          <td><a (click) = "deleteContacts(contact._id)" class="btn btn-danger">Delete</a></td>
+      </tr>
+  </tbody>
+</table>
