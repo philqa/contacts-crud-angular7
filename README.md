@@ -2,6 +2,8 @@
 
 Basic Angular7 CRUD application with an ExpressJS back end API using MongoDB created to demonstrate using mocks (via ng-apimock) for CodeceptJS UI testing.
 
+Supporting article: https://phil.qa/article/codeceptjs-mocks
+
 ## Prerequisites ##
 
 - Node 8.9+
