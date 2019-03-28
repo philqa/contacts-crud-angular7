@@ -13,6 +13,15 @@
       },
       "file": "./mocks/responses/contacts-success.json",
       "delay": 500
+    },
+    "empty": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*"
+      },
+      "data": [],
+      "delay": 500
     }
   }
 }

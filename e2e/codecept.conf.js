@@ -5,7 +5,7 @@ exports.config = {
     helpers: {
         Puppeteer: {
             url: 'http://localhost:4200',
-            show: true,
+            show: false,
             waitForTimeout: 5000,
             chrome: {
               args: ['--start-fullscreen']

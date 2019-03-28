@@ -19,3 +19,11 @@ Scenario('view contacts list', I => {
   I.click('View Contacts');
   contactsPage.checkContactsTable();
 });
+
+Scenario('view contacts list when empty', I => {
+    I.selectScenario('contacts', 'empty');
+    I.see('Simple Example App');
+    I.click('View Contacts');
+    I.dontSeeElement(contactsPage.elements.contactsTable);
+});
+
