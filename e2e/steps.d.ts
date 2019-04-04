@@ -281,6 +281,7 @@ declare namespace CodeceptJS {
     say(msg: string, color?: string) : void,
     retryStep(opts: string) : void,
     selectScenario(identifier: string, scenario: string): Promise<string>;
+    setMockCookie(): Promise<string>;
   }
 
 }

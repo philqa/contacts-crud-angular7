@@ -9,16 +9,17 @@ Feature('Home');
 let homePage;
 let contactsPage;
 
-Before(async I => {
+Before(I => {
     homePage = new HomePage(I);
     contactsPage = new ContactsPage(I);
     I.amOnPage('/');
-    await I.setMockCookie();
+    I.setMockCookie();
 });
 
-Scenario('view contacts list when empty', I => {
-    I.selectScenario('contacts', 'empty');
+Scenario('view contacts list with contacts', I => {
+    I.selectScenario('contacts', 'success');
     I.see('Simple Example App');
     I.click('View Contacts');
-    I.dontSeeElement(contactsPage.elements.contactsTable);
+    contactsPage.checkContactsTable();
+    I.see(contactsPage.elements.contactsTable);
 });

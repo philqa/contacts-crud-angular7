@@ -15,5 +15,5 @@ app.use(require('ng-apimock/lib/utils').ngApimockRequest);
 app.use('/mocking', express.static('./tmp/ngApimock'));
 
 app.listen(app.get('port'), function () {
-    console.log('app running on port', app.get('port'));
+    console.log('mock server running on port', app.get('port'));
 });

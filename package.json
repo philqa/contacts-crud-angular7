@@ -8,7 +8,12 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "codecept": "codeceptjs run -c ./e2e --steps --verbose --reporter mocha-multi"
+    "start:server": "npm start",
+    "start:mock": "forever start mockServer.js",
+    "start:both": "start-test start:mock http-get://localhost:4000/ start:server",
+    "e2e:ci": "start-test start:both http-get://localhost:4200/ codecept",
+    "codecept": "codeceptjs run -c ./e2e --steps --verbose --reporter mocha-multi",
+    "parallel": "codeceptjs run-multiple parallel -c ./e2e --steps --verbose --reporter mocha-multi"
   },
   "private": false,
   "dependencies": {
@@ -33,11 +38,12 @@
     "@angular/cli": "~7.0.2",
     "@angular/compiler-cli": "~7.0.0",
     "@angular/language-service": "~7.0.0",
-    "@types/node": "~8.9.4",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
     "codeceptjs": "^2.0.8",
     "codelyzer": "~4.5.0",
+    "forever": "^0.15.3",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~3.0.0",
@@ -45,13 +51,15 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "ng-apimock": "^1.4.8",
-    "puppeteer": "^1.11.0",
-    "ts-node": "~5.0.1",
-    "mocha-multi": "^1.0.1",
     "mocha-junit-reporter": "^1.18.0",
+    "mocha-multi": "^1.0.1",
     "mochawesome": "^3.1.1",
-    "typescript": "~3.1.6",
-    "tslint": "~5.11.0"
+    "ng-apimock": "^1.4.8",
+    "protractor": "^5.4.2",
+    "puppeteer": "^1.11.0",
+    "start-server-and-test": "^1.7.12",
+    "ts-node": "~5.0.1",
+    "tslint": "~5.11.0",
+    "typescript": "~3.1.6"
   }
 }
