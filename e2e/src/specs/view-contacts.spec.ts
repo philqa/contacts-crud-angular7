@@ -27,3 +27,11 @@ Scenario('view contacts list when empty', async I => {
 Scenario('compare home screen', async I => {
    await I.compareImage('home');
 });
+
+Scenario('view contacts list when empty', I => {
+    I.selectScenario('contacts', 'empty');
+    I.see('Simple Example App');
+    I.click('View Contacts');
+    I.dontSeeElement(contactsPage.elements.contactsTable);
+});
+
