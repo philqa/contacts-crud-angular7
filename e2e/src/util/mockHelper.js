@@ -9,17 +9,8 @@ class MockHelper extends Helper {
 
     setMockCookie() {
         this.helpers['Protractor'].browser.manage().addCookie({name: 'ngapimockid', value: ngapimockid}).then(d => {
-            this.helpers['Protractor'].browser.manage().getCookies().then(c => {
-                // get values
-                output.print(c);
-                let cookies = c.value;
-                for (let k in cookies) {
-                    output.print(cookies[k].name);
-                }
-                return true;
-            });
-        });
 
+        });
     }
 
     selectScenario(identifier, scenario) {

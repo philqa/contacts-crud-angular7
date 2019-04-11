@@ -1,5 +1,5 @@
 exports.config = {
-    tests: './src/specs/*.spec.ts',
+    tests: './src/specs/view-contacts.spec.ts',
     timeout: 30000,
     output: '../reports',
     helpers: {
@@ -21,6 +21,13 @@ exports.config = {
         },
         MockHelper: {
             require: './src/util/mockHelper.js'
+        },
+        VisualHelper: {
+            require: './src/util/visualHelper.js',
+            runType: process.profile || 'diff',
+            reportFolder: './reports/visual-diff/',
+            baseFolder: './screenshots/base/',
+            currentFolder: './screenshots/current/'
         }
     },
     plugins: {},

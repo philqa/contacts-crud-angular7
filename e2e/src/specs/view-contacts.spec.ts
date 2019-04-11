@@ -16,9 +16,14 @@ Before(async I => {
     await I.setMockCookie();
 });
 
-Scenario('view contacts list when empty', I => {
+Scenario('view contacts list when empty', async I => {
     I.selectScenario('contacts', 'empty');
     I.see('Simple Example App');
+    await I.takeScreenshot('home');
     I.click('View Contacts');
     I.dontSeeElement(contactsPage.elements.contactsTable);
+});
+
+Scenario('compare home screen', async I => {
+   await I.compareImage('home');
 });

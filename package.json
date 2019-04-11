@@ -13,6 +13,7 @@
     "start:both": "start-test start:mock http-get://localhost:4000/ start:server",
     "e2e:ci": "start-test start:both http-get://localhost:4200/ codecept",
     "codecept": "codeceptjs run -c ./e2e --steps --verbose --reporter mocha-multi",
+    "visual:base": "codeceptjs run -c ./e2e --steps --verbose --reporter mocha-multi --profile base",
     "parallel": "codeceptjs run-multiple parallel -c ./e2e --steps --verbose --reporter mocha-multi"
   },
   "private": false,
@@ -55,6 +56,8 @@
     "mocha-multi": "^1.0.1",
     "mochawesome": "^3.1.1",
     "ng-apimock": "^1.4.8",
+    "pixelmatch": "^4.0.2",
+    "pngjs": "^3.4.0",
     "protractor": "^5.4.2",
     "puppeteer": "^1.11.0",
     "start-server-and-test": "^1.7.12",
